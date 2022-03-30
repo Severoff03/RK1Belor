@@ -5,45 +5,25 @@
 
 using namespace std;
 
-void BinarCod(int Num, ofstream& Datatest)
-{
-    if (Num > 0){
-
-        if (Num%2==0)
-        {
-            Num /=2;
-            BinarCod(Num,Datatest);
-            Datatest << 0;
-        }
-        else
-        {
-            Num /=2;
-            BinarCod(Num,Datatest);
-            Datatest << 1;
-        }
-    }
-
-}
-
 int main() {
+    int H=0;
+    int W=0;
+
+    cout << "Enter Height and Width" << endl;
+    cin >> H >> W;
 
 
-    ofstream Datatest;
-    Datatest.open ("data.txt",ios::out);
-    string Binar;
+    for(int i =1; i < H+1 ;i++){
+        for (int j=0; j < W+1; j++){
+            if (j >= i+1 || j <= W-i)
+                cout << " ";
+            else
+                cout << "*";
+        }
+        cout << endl;
 
-    int Num;
-    cout << "Enter the number" << endl;
-    cin >> Num;
-
-    BinarCod(Num,Datatest);
-
-
-
-
-
-
-    Datatest.close();
+    }
 
     return 0;
 }
+
