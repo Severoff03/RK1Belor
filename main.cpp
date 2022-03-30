@@ -5,8 +5,35 @@
 
 using namespace std;
 
+void inputf(List& students) // задача 6
+{
+	cout << "Введите имя файла  " << endl;
+	char name[64];
+	
+	cin.getline(name, 64);
 
-class Student{
+	ofstream input(name, ios::binary);
+	if (!input)
+		cout << "Не удается открыть файл \"" << name << "\" для записи" << endl;
+	else
+	{
+		student yacheika;
+		ListNode* p = students.head;
+		input.write((char*)&students.dlin, sizeof(students.dlin));
+		for (int i = 1; i <= students.dlin; i++)
+		{
+			input.write((char*)&p->stud, sizeof(p->stud));
+			p = p->next;
+		}
+		input.close();
+        cout << "Файл записан" << endl;
+	}
+
+
+}
+
+
+class Student{  /// Общая идея для задачи 8
 private:
     string Name;
     int** classes;
@@ -84,7 +111,7 @@ void BinarCod(int Num, ofstream& Datatest)
     }
 
 }
-void Binar2()
+void Binar2() // задача 2
 {
 ofstream Datatest;
 Datatest.open ("data.txt",ios::out);
@@ -112,7 +139,7 @@ void elochka2(int H, int W, int i)
     if (i < H+1)
         elochka2(H,W,i);
 }
-void elochka(){
+void elochka(){ //задача 4
     int H=0;
     int W=0;
 
