@@ -5,6 +5,66 @@
 
 using namespace std;
 
+
+class Student{
+private:
+    string Name;
+    int** classes;
+    int numclas;
+public:
+    Student(){
+        cin >> Name ;
+        cin >> numclas;
+        *classes = new int [numclas];
+
+    }
+    int addclass( int clas, int cl, int numofsub){
+        if (clas > numclas )
+        {
+            return -1;
+        }
+        classes[numofsub][cl]=clas;
+        return 1;
+    }
+    int addnewclass(){
+        int** clas ;
+        *clas = new int [numclas];
+
+        for (int i; i< numclas; i++){
+            clas[i]= new int [10];
+        }
+
+        for (int i=0; i < numclas;i++){
+            for (int j=0;i<numclas;i++){
+                clas[i][j]=classes[i][j];
+            }
+
+        }
+
+        delete[] classes;
+        *classes = new int [numclas+1];
+        for (int i; i< numclas+1; i++){
+            classes[i]= new int [10];
+        }
+
+        for (int i=0; i < numclas;i++){
+            classes[i]= clas[i];
+        }
+
+        numclas++;
+        return 1;
+    }
+    int midlclass()
+    {
+        int mid=0;
+        for (int i=0; i < numclas;i++){
+            mid += classes[num][i];
+        }
+        mid /= numclas;
+        cout << "midl class -"<< mid << endl;
+    }
+
+    
 void BinarCod(int Num, ofstream& Datatest)
 {
     if (Num > 0){
