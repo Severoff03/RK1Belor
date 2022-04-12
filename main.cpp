@@ -81,7 +81,7 @@ void task2(){
 void make3f(){
     ofstream task3f;
     task3f.open("t3.txt",ios::out);
-    task3f << "01000101010";
+    task3f << "1000101010";
     task3f.close();
 }
 
@@ -100,7 +100,7 @@ void task3(){
         chars[i] = 0;
     }
 
-    static char result[16];
+    string result;
 
     while(fscanf(task3 , "%c", &c) != EOF)
     {
@@ -115,12 +115,12 @@ void task3(){
             temp |= (((chars[i + j] == 0x30) ? 0 : 1) << j);
         }
 
-        result[i / 4] = hexn[temp];
+        result += hexn[temp];
     }
 
-    result [16] = '\0';
+    cout << "0x"<<result<< endl;
 
-    cout << result<< endl;
+}
 }
 
 void elochka2(int H, int W, int i)
