@@ -81,7 +81,7 @@ void task2(){
 void make3f(){
     ofstream task3f;
     task3f.open("t3.txt",ios::out);
-    task3f << "01000101010";
+    task3f << "100010101";
     task3f.close();
 }
 
@@ -388,7 +388,7 @@ int main() {
                 cout << "Prototype"<< endl;
                 break;
             case 8:
-                cout << "ClassStud.h";
+                cout << "Look in class";
                 break;
 
         }
