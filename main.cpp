@@ -140,7 +140,7 @@ void task4(){
         int H=0;
         int W=0;
 
-        cout << "Enter Height and Width" << endl;
+        cout << "Enter Width and Height" << endl;
         cin >> H >> W;
 
         int i=0;
@@ -165,17 +165,16 @@ void task5(){
 
         }
 
-        int out[h];
+        float out[h];
 
         list<double> aver;
 
         for(int i = 0; i < h; ++i)
         {
-            int n =0;
             for(int j = 0; j < w; ++j)
             {
                 out[i] += arr[i][j];
-            };
+            }
 
             out[i] /= w;
         }
@@ -341,9 +340,9 @@ public :
         }
 
     }
-    
 
-    
+
+
 };
 
 
