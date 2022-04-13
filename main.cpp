@@ -3,8 +3,8 @@
 #include <stdio.h>
 #include <fstream>
 #include <list>
+#include <cstring>
 #include <vector>
-#include <windows.h>
 
 
 using namespace std;
@@ -81,7 +81,7 @@ void task2(){
 void make3f(){
     ofstream task3f;
     task3f.open("t3.txt",ios::out);
-    task3f << "1000101010";
+    task3f << "01000101010";
     task3f.close();
 }
 
@@ -120,7 +120,6 @@ void task3(){
 
     cout << "0x"<<result<< endl;
 
-}
 }
 
 void elochka2(int H, int W, int i)
@@ -205,22 +204,6 @@ struct linklist
 void task6(){
     linklist list;
 
-    list.HEAD = (Node*)malloc(sizeof(Node));
-    list.HEAD->string = (char*)malloc(6);
-
-    strcpy(list.HEAD->string, "HEAD");
-    list.HEAD->size = strlen(list.HEAD->string);
-
-    Node* node = list.HEAD;
-
-    list.TAIL =node;
-    strcpy(node->string, "TAIL");
-    node->size = strlen(node->string);
-
-    list.HEAD->prev = nullptr;
-    list.TAIL->next = nullptr;
-
-
     FILE*task6f;
     task6f = fopen("t6.txt", "w");
 
@@ -247,21 +230,6 @@ void task6(){
 
 void task7(){
     linklist list;
-
-    list.HEAD = (Node*)malloc(sizeof(Node));
-    list.HEAD->string = (char*)malloc(6);
-
-    strcpy(list.HEAD->string, "HEAD");
-    list.HEAD->size = strlen(list.HEAD->string);
-
-    Node* node = list.HEAD;
-
-    list.TAIL =node;
-    strcpy(node->string, "TAIL");
-    node->size = strlen(node->string);
-
-    list.HEAD->prev = nullptr;
-    list.TAIL->next = nullptr;
 
     Node* element = (Node*)malloc(sizeof(Node));
 
@@ -291,7 +259,6 @@ void task7(){
     cur_node->next = element;
 
 }
-
 struct Student {
     char* name;
     int age;
@@ -322,7 +289,6 @@ struct Mark {
 
 };
 
-
 class Student1 {
 private :
     Student* info;
@@ -331,7 +297,7 @@ private :
 
 public :
 
-    Student1(const char* new_name, const int new _age, const char* new_numTicket) {
+    Student1(const char* new_name, const int new_age, const char* new_numTicket) {
         info = new Student();
         info->name = (char*)new_name;
         info->age = new_age;
@@ -375,19 +341,13 @@ public :
         }
 
     }
+    
 
-    void print(void){
-        char buff[256];
-        sprintf(buff, "%s %s, %u лет, билет №: %s", info->name, info->age, info->ID);
-        cout << buff << endl;
-        for (list<Mark*>::iterator it = listSubjMark.begin(); it != listSubjMark.end(); ++it)
-        {
-            sprintf(buff, "Предмет: %s; Средняя оценка: %.1f", (*it)->subj, (*it)->averMark);
-            cout << buff << endl;
-        }
-
-    }
+    
 };
+
+
+
 
 
 
