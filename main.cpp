@@ -122,29 +122,25 @@ void task3(){
 
 }
 
-void elochka2(int H, int W, int i)
-{
-    for (int j=0; j < W+1; j++){
-        if (j >= i+1 || j >= W-i)
-            cout << " ";
-        else
-            cout << "*";
-    }
-    cout << endl;
-    i++;
-    if (i < H+1)
-        elochka2(H,W,i);
-}
+
 
 void task4(){
-        int H=0;
+            int H=0;
         int W=0;
 
         cout << "Enter Width and Height" << endl;
         cin >> H >> W;
+       for (int i=0; i < H; i++) {
+           for (int j = 0; j < W + 1; j++) {
+               if (j >= i + 1 || j >= W - i)
+                   cout << " ";
+               else
+                   cout << "*";
+           }
+           cout << endl;
+       }
 
-        int i=0;
-        elochka2(H,W,i);
+       }
 
 }
 
